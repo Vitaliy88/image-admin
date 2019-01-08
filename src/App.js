@@ -1,26 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+
+import Header from './components/Header/Header';
+
+import AddImageContainer from './containers/AddImageContainer'
+import EditImageContainer from './containers/EditImageContainer'
+import ImagesListContainer from './containers/ImagesListContainer'
+import redusers from './redusers/index';
+
+const store = createStore(redusers, composeWithDevTools(
+  applyMiddleware(thunk)
+));
+
 
 class App extends Component {
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div>
+            <Header />
+            <Switch>
+              <Route exact path='/' component={ImagesListContainer}/>
+              <Route exact path='/images/:id' component={EditImageContainer}/>
+              <Route exact path='/addImage' component={AddImageContainer}/>
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }

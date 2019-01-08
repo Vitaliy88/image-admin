@@ -1,0 +1,27 @@
+.formStyle{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 20px auto;
+  
+  @media screen and (max-width: 600px) {
+    width: 85%;
+  }
+
+  label {
+    padding: 10px 0px;
+  }
+
+  input[type="submit"]{
+    width: 60px;
+  }
+  .imageStyle{
+    width: 100%;
+  }
+  
+}
+
+.modal-button{
+  display: flex;
+  justify-content: space-around;
+}

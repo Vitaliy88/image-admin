@@ -1,0 +1,9 @@
+.header-wrap{
+  background-color: lightblue;
+  height: 42px;
+
+  .active{
+    border-bottom: 2px solid blue;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,16 @@
+
+export const URL = `http://localhost:3001/images/`;
+
+export const ADD_IMAGE = 'ADD_IMAGE';
+
+export const ITEMS_IS_LOADING = 'ITEMS_IS_LOADING';
+export const SAVE_IMAGE_SUCCESS = 'SAVE_IMAGE_SUCCESS';
+export const FETCH_IMAGES_SUCCESS = 'ITEMS_FETCH_DATA_SUCCESS';
+export const ITEM_HAS_ERROR = 'ITEM_HAS_ERROR';
+
+
+export const LOAD_ITEM_SUCCSESS = 'LOAD_ITEM_SUCCSESS';
+
+export const DELETE_IMAGE_SUCCSESS = 'DELETE_IMAGE_SUCCSESS';
+
+export const LOAD_LIST_OF_IMAGES_SUCCSESS = 'LOAD_LIST_OF_IMAGES_SUCCSESS';
